@@ -16,11 +16,34 @@ public class Calculate {
 		return answer;
 	}
 	//call to average, returns the average of values passed (double)
-	public static double average(double number) {
+	public static double average(double number1, double number2) {
 		double answer;
-		answer=number+number %2;
+		answer=(number1+number2)/2;
 		return answer;
 	}
+	//call to average, accepts 3 doubles 
+	public static double average(double number1, double number2, double number3) {
+		double answer;
+		answer=(number1+number2+number3)/3;
+		return answer;
+	}
+	//call to toDegrees, converts an angle measure in radians to degrees
+	public static double toDegrees(double x) {
+
+		return x * (180 / 3.14159);
+	
+	}
+	//call to toRadians, converts degrees to radians 
+	public static double toRadians(double x) {
+		
+		return x * (3.14159 / 180);
+	
+	}
+	public static double discriminant(double a, double b, double c) {
+		
+		return (b*b) - (4 * a * c);
+	}
 }
+
 
 
