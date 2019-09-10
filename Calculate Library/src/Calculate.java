@@ -59,7 +59,86 @@ public class Calculate {
 		
 		return a * c + var + "^2"+ " + " + (a * d + b * c) + var + " + " + b * d;
 	}
+	// PART 2
+	//determines whether or not one integer is evenly divisible by another (will state true/false)
+	public static boolean isDivisibleBy(int a, int b) {
+		int remainder = a % b;
+		if (remainder != 0) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+	//returns the absolute value of the number passed 
+	public static double absValue(double a) {
+		if (a < 0) {
+			return -a;
+		}else{
+			return a;
+		}	
+	}
+	//returns the larger of the values passed 
+	public static double max(double a, double b) {
+		if (a < b) {
+			return b;
+		}else {
+			return a;
+		}
+	}
+	//overloads max, accepts three doubles 
+		public static double max(double a, double b, double c) {
+			if (a > b && a > c){
+				return a;
+			}else if (b > a && b > c){
+				return b;
+			}else {
+				return c;
+			}
+			
+		}
+		// returns the smaller of the two values
+		public static double min(double a, double b) {
+			if (a < b) {
+				return a;
+		}else {
+				return b;
+		}
+	}
+		//rounds a double to 2 decimal places, returns it
+		public static double round2(double num) {
+			num = num * 100;
+			num = num + .5;
+			num = (int) num;
+			num = (double) num / 100;
+			return num;
+			
+		}
+		// PART 3
+		//raises the number to a positive integer power 
+		public static double exponent(double base, int power) {
+			int i = 1;
+			double answer = base;
+			while (i != power) {
+				answer *= base;
+				i++;
+			}
+			return answer; 
+		
+		}
+		//returns factorial of a number
+		public static int factorial(int a) {
+			
+		}
 }
+			
+
+
+
+		
+
+
+
+
 	
 
 
