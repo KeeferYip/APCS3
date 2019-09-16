@@ -126,7 +126,14 @@ public class Calculate {
 		
 		}
 		//returns factorial of a number
-		public static int factorial(int a) {
+		public static int factorial(int num) { 
+			int answer = num;
+			for ( int i = num - 1; i > 0; i--) {
+				answer = answer * i;
+			}
+			 return answer;
+		}
+		public static int isPrime(int num) {
 			
 		}
 }
