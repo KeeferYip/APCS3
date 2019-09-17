@@ -136,6 +136,9 @@ public class Calculate {
 		public static int isPrime(int num) {
 			
 		}
+		public static int gcf(int x) {
+			
+		}
 }
 			
 
