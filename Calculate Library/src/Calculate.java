@@ -133,6 +133,7 @@ public class Calculate {
 			}
 			 return answer;
 		}
+		//determines if a number is a prime number or not 
 		public static boolean isPrime(int num) {
 			boolean answer = true;
 			for (int i=2; i< num; i++) {
@@ -144,8 +145,8 @@ public class Calculate {
 		}	
 			return answer;
 }
-
-		public static int gcf(int x) {
+		//returns the greatest common factor between two numbers
+		public static int gcf(int x,int y) {
 			
 		}
 }
