@@ -133,9 +133,18 @@ public class Calculate {
 			}
 			 return answer;
 		}
-		public static int isPrime(int num) {
+		public static boolean isPrime(int num) {
+			boolean answer = true;
+			for (int i=2; i< num; i++) {
+			boolean result = isDivisibleBy(num,i);
+			if (result==true) {
+			answer = false;
 			
-		}
+			}
+		}	
+			return answer;
+}
+
 		public static int gcf(int x) {
 			
 		}
