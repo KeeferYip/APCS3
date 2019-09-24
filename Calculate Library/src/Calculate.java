@@ -147,8 +147,25 @@ public class Calculate {
 }
 		//returns the greatest common factor between two numbers
 		public static int gcf(int x,int y) {
-			
+			int larger = (int) max(x,y);
+			int factor = 1;
+			for(int i = 2; i < larger;i++) {
+				if (x % 1 == 0 && y % i ==0) {
+					factor =i;
+				}
+			}
+			return factor;
 		}
+		//returns the square root of a number after using guesses
+		public static double sqrt(double x) {
+			double guess = x/2;
+			while (guess <= 0.5 * (x/guess + guess)) {
+			guess += .0000005;
+			}
+			x = round2(x);
+			return x;
+		}
+		
 }
 			
 
