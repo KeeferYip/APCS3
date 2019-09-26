@@ -158,15 +158,30 @@ public class Calculate {
 		}
 		//returns the square root of a number after using guesses
 		public static double sqrt(double x) {
-			double guess = x/2;
-			while (guess <= 0.5 * (x/guess + guess)) {
-			guess += .0000005;
+			double guess = 0.01;
+			while (guess + .00005 < (0.5 * (x/guess + guess))) { 
+				guess += .0000005;
 			}
-			x = round2(x);
-			return x;
+			return round2(guess);
+		}
+		//calls to a quadratic formula of 3 numbers, will return "no real roots" if imaginary number
+		public static String quadForm(int a, int b, int c) {
+			if(discriminant ( a , b, c) < 0) {
+				System.out.println("no real roots");
+			}
+			double root1 = (-b + (sqrt(discriminant(a, b, c)))) / (2 * a);
+			double root2 = (-b - (sqrt(discriminant(a, b, c)))) / (2 * a);
+				if (root1 == root2) {
+					return "The repeated root is" + round2(root1);
+				}else {
+					double rootmin = min((int)root1, (int)root2);
+					double rootmax = max(root1, root2);
+					return "The roots are " + round2(rootmin) + "and" + round2(rootmax);
+				}
 		}
 		
-}
+	}
+
 			
 
 
