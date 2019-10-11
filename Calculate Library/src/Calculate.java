@@ -97,7 +97,7 @@ public class Calculate {
 			
 		}
 		// returns the smaller of the two values
-		public static double min(double a, double b) {
+		public static double min(int a, int b) {
 			if (a < b) {
 				return a;
 		}else {
