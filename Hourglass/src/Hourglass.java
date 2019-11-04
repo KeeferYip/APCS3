@@ -19,6 +19,7 @@ public class Hourglass {
         } else {
             buildHGlass(width);
         }
+        scanner.close();
     }
 
     public static void buildHGlass(int width) {
