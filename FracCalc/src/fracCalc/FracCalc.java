@@ -9,21 +9,22 @@ public class FracCalc {
 
     	 public static void main(String[] args) 
     	    {
-    	        Scanner scanner = new Scanner(System.in);
+    	        Scanner userInput = new Scanner(System.in);
     	        String quit = " ";        
     	        String equation = " ";
-    	        System.out.println("Welcome to FracCalc");
+    	        System.out.println("Welcome to FracCalc!");
     	        System.out.println("~ Checkpoint 1 ~");
     	        while(!quit.equalsIgnoreCase("quit")){
     	            System.out.println("What is your equation?");
-    	            equation = scanner.nextLine();
+    	            equation = userInput.nextLine();
     	            System.out.println(produceAnswer(equation));       
-    	            System.out.println("Do you wish to continue? ( Enter \"quit\" to stop)");
-    	            quit = scanner.nextLine();     }
-    	    scanner.close();
- // TODO: Read the input from the user and call produceAnswer with an equation
+    	            System.out.println("Do you wish to continue? ( Enter \"quit\" to stop )");
+    	            quit = userInput.nextLine();     }
+    	
+    	        userInput.close();
+        }
+// TODO: Read the input from the user and call produceAnswer with an equation
 
-    }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
     // This function takes a String 'input' and produces the result
