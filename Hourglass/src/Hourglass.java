@@ -7,55 +7,55 @@ public class Hourglass {
         // Create new Scanner Object and print welcome message
         Scanner scanner = new Scanner(System.in);
    
-        System.out.println("Enter the width of the hourglass ");
-        int width = scanner.nextInt();
-        if (width > 300) {
+        System.out.println("Enter the size of the hourglass ");
+        int size = scanner.nextInt();
+        if (size > 300) {
             scanner.nextLine();
             String sure = scanner.nextLine();
             if (sure.equals("yes!")) {
-                // Build and print the hour glass with the given width
-                buildHGlass(width);
+             
+                produceHourGlass(size);
             }
         } else {
-            buildHGlass(width);
+            produceHourGlass(size);
         }
         scanner.close();
     }
 
-    public static void buildHGlass(int width) {
-        buildTop(width);
-        repeatThis(width - 1, " ");
+    public static void produceHourGlass(int size) {
+    	top(size);
+        loopRepeated(size - 1, " ");
         System.out.println("|   |"); 
-        buildBottom(width);
+        bottom(size);
     }
 
-    public static void buildTop(int width){
+    public static void top(int size){
         System.out.print("\n\n| ");
-        repeatThis(width, "\" ");
+        loopRepeated(size, "\" ");
         System.out.println("|");
 
-        for (int row = 1; row <= (width - 2) / 2; row++) {
-            repeatThis(row, "  ");
+        for (int row = 1; row <= (size - 2) / 2; row++) {
+            loopRepeated(row, "  ");
             System.out.print("\\ ");
-            repeatThis(-2*row+width, ": ");
+            loopRepeated(-2*row+size, ": ");
             System.out.println("/");
         }
     }
 
-    public static void buildBottom(int width) {
-        for (int row = (width - 2) / 2; row >= 1; row--) {
-            repeatThis(row, "  ");
+    public static void bottom(int size) {
+        for (int row = (size - 2) / 2; row >= 1; row--) {
+            loopRepeated(row, "  ");
             System.out.print("/ ");
-            repeatThis(-2*row+width, ": ");
+            loopRepeated(-2*row+size, ": ");
             System.out.println("\\ ");
         }
 
         System.out.print("| ");
-        repeatThis(width, "\" ");
+        loopRepeated(size, "\" ");
         System.out.println("|");
     }
 
-    public static void repeatThis(int times, String character) {
+    public static void loopRepeated(int times, String character) {
         for (int i = 0; i < times; i++)
             System.out.print(character);
     			}
