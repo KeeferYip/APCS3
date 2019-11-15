@@ -34,7 +34,7 @@ public class FracCalc {
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
-    	 public static String produceAnswer(String input) { 
+    	  public static String produceAnswer(String input) { 
     	        // TODO: Implement this function to produce the solution to the input
     	    	String [] split = input.split(" ");
     	    	String firstNum = split[0];
@@ -58,6 +58,9 @@ public class FracCalc {
     	   	    String end = "";
     	    	if (operator.equals("+") || operator.equals("-")) {
     	    			answer = addition(improper, operator, improper2);
+    	    			end = simplify(answer[0], answer[1]);
+    	    	} else if(operator.equals("*") || operator.equals("/")) {
+    	    			answer = multiplication(improper,operator, improper2);
     	    			end = simplify(answer[0], answer[1]);	
     	    	}
     			return end;
@@ -98,6 +101,23 @@ public class FracCalc {
     		   int top  = frac1[0]+frac1[1]; 
     	       int[] result = {top,bottom};
     		   return result;
+    		   
+    	   }
+    	   public static int[] multiplication(int[] frac1, String operator, int[] frac2) {
+    		   if(operator.equals("/")) {
+    			   int denom = frac2[0];
+    			   frac2[0]=frac2[1];
+    			   frac2[1]=denom;
+    		   }
+    		   frac1[0]*=frac2[0];
+    		   frac1[1]*=frac2[1]; 
+    		   if (frac1[0] < 0 && frac1[1] < 0) {
+    			   frac1[0] = -frac1[0];
+    			   frac1[1] = -frac1[1];
+    		   }
+    		   
+    		   int[] x = {frac1[0], frac1[1]};
+    		   return x;
     		   
     	   }
     	   
@@ -146,7 +166,13 @@ public class FracCalc {
     			int improper = num / den;
     			int remainder = num % den;
     			return improper + "_" + absValue(remainder) + "/" + absValue(den);		
-    		
+    		}
+    	   public static double max(double frac1, double frac2){
+    			if (frac1 > frac2) {
+    				return frac1;
+    			} else {
+    				return frac2;
+    			}
     		}
     	   public static int min (int operand1, int operand2){
     			if (operand1 < operand2) {
