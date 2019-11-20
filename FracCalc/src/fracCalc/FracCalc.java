@@ -1,6 +1,8 @@
 //Keefer Yip
-//FracCalc Checkpoint 1 - November 2019
+//November 2019
 
+//Big Project that underwent multiple checkpoints to reach final product
+//Calculator for Fractional Expressions, simplifies or makes into a mixed number when necessary
 package fracCalc;
 
 import java.util.*;
