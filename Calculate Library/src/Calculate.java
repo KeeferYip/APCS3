@@ -3,45 +3,45 @@
  * Library of math functions
 */ 
 public class Calculate {
-	// call to square, returns the square of the value passed
+	// call to square, returns the square of the value passed (number times itself)
 	public static int square(int number) {   
 		int answer;
 		answer = number*number;
 		return answer;
 	}
-	// call to cube, returns the square of the value passed
+	// call to cube, returns the cube of the value passed (input number ^3)
 	public static int cube(int number) { 
 		int answer;
 		answer=number*number*number;
 		return answer;
 	}
-	//call to average, returns the average of values passed (double)
+	//call to average, returns the average of two values passed (average of inputs for number1 and number2) 
 	public static double average(double number1, double number2) {
 		double answer;
 		answer=(number1+number2)/2;
 		return answer;
 	}
-	//call to average, accepts 3 doubles 
+	//call to average, accepts 3 doubles (takes the average of three number inputs, number1,number2, and number3)
 	public static double average(double number1, double number2, double number3) {
 		double answer;
 		answer=(number1+number2+number3)/3;
 		return answer;
 	}
-	//call to toDegrees, converts an angle measure in radians to degrees
-	public static double toDegrees(double x) {
+	//call to toDegrees, converts an angle measure in radians  to degrees
+	public static double toDegrees(double radians) {
 
-		return x * (180 / 3.14159);
+		return radians * (180 / 3.14159);
 	
 	}
-	//call to toRadians, converts degrees to radians 
-	public static double toRadians(double x) {
+	//call to toRadians, converts degrees  to radians 
+	public static double toRadians(double degrees) {
 		
-		return x * (3.14159 / 180);
+		return degrees * (3.14159 / 180);
 	
 	}
-	//call to discriminant, provides the coefficients of a quadratic equation, returns the discriminant
+	//call to discriminant, provides the coefficients of a quadratic equation, returns the discriminant (middle number [b] squared - 4 times first number [a] and third number [c])
 	public static double discriminant(double a, double b, double c) {
-		
+													//a is the coefficient of the first polynomial, b is the second, c is the third
 		return (b*b) - (4 * a * c);
 	}
 	//call to improper frac, converts mixed number to improper fraction
@@ -59,9 +59,10 @@ public class Calculate {
 		
 		return a * c + var + "^2"+ " + " + (a * d + b * c) + var + " + " + b * d;
 	}
+	
 	// PART 2
 	//determines whether or not one integer is evenly divisible by another (will state true/false)
-	public static boolean isDivisibleBy(int a, int b) {
+	public static boolean isDivisibleBy(int a, int b) {       //takes the mod of a by b, and sets conditional to see if it equals 0 or not
 		int remainder = a % b;
 		if (remainder != 0) {
 			return false;
@@ -70,15 +71,15 @@ public class Calculate {
 		}
 	}
 	//returns the absolute value of the number passed 
-	public static double absValue(double a) {
+	public static double absValue(double a) {       //makes a positive if seen that it is less than 0
 		if (a < 0) {
 			return -a;
 		}else{
 			return a;
 		}	
 	}
-	//returns the larger of the values passed 
-	public static double max(double a, double b) {
+	//returns the larger of the values (a and b) passed 
+	public static double max(double a, double b) {   
 		if (a < b) {
 			return b;
 		}else {
