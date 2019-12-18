@@ -8,23 +8,26 @@ package fracCalc;
 import java.util.*;
 
 public class FracCalc {
-
-    	 public static void main(String[] args) 
-    	    {
-    	        Scanner userInput = new Scanner(System.in);
-    	        String quit = " ";        
-    	        String equation = " ";
-    	        System.out.println("Welcome to FracCalc!");
-    	        System.out.println("~ Checkpoint 1 ~");
-    	        while(!quit.equalsIgnoreCase("quit")){
-    	            System.out.println("What is your equation?");
-    	            equation = userInput.nextLine();
-    	            System.out.println(produceAnswer(equation));       
-    	            System.out.println("Do you wish to continue? ( Enter \"quit\" to stop )");
-    	            quit = userInput.nextLine();     }
+   
+	public static void main(String[] args) {
+        // TODO: Read the input from the user and call produceAnswer with an equation
+    
+		Scanner userInput = new Scanner(System.in);
+    	boolean done = false;
+    	while(!done) {
+    		System.out.println("Enter your input: ");
+    		String equation = userInput.nextLine();
+    		System.out.println(produceAnswer(equation));
+    		System.out.println("keep going?");
+    		String s = userInput.next();
+    		if (s.charAt(0) == 'q'){
+    			done = true;
+    		}
+    	}
+    	userInput.close();
+    }
     	
-    	        userInput.close();
-        }
+    
 // TODO: Read the input from the user and call produceAnswer with an equation
 
     
