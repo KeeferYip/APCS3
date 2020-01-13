@@ -3,11 +3,11 @@
 
 //Big Project that underwent multiple checkpoints to reach final product
 //Calculator for Fractional Expressions, simplifies or makes into a mixed number when necessary
-package fracCalc;
+package oldFracCalc;
 
 import java.util.*;
 
-public class FracCalc {
+public class OldFracCalc {
    
 	public static void main(String[] args) {
         // TODO: Read the input from the user and call produceAnswer with an equation
